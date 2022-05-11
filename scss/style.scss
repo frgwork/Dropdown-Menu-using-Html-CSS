@@ -1,0 +1,206 @@
+/* &display=swap*/
+/* Обнуляющий стиль */
+*,
+*::before,
+*::after {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   box-sizing: border-box;
+}
+ol li,
+ul li {
+   list-style: none;
+}
+a,
+a:visited {
+   text-decoration: none;
+}
+a:hover {
+   text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-weight: inherit;
+   font-size: inherit;
+}
+img {
+   vertical-align: top;
+}
+html,
+body {
+   height: 100%;
+   font-size: 14px;
+   line-height: 1;
+}
+input,
+button,
+textarea {
+   font-family: inherit;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+}
+[class*="__container"] {
+   max-width: 1000px;
+   margin: 0 auto;
+}
+/* -------------- */
+body {
+   //display: flex;
+   //flex-direction: column;
+   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+   background: linear-gradient(45deg, #4e65ff, #92effd);
+}
+//.wrapper {
+//   flex: 1 1 auto;
+//}
+
+.header {
+   //height: 200px;
+   // .header__container
+   &__container {
+      
+   }
+   // .header__menu
+   &__menu {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 120px;
+      height: 60px;
+      background: #fff;
+      box-shadow: 0 25px 35px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      transition: height 0.5s, width 0.5s;
+      transition-delay: 0s, 0.75s;
+      overflow: hidden;
+      &.active {
+         width: 300px;
+         height: 400px;
+         transition: width 0.5s, height 0.5s;
+         transition-delay: 0s, 0.75s;
+         .header__menu-toggle::before {
+            transform: translateY(0) rotate(45deg);
+            box-shadow: 0 0 #555;
+         }
+         .header__menu-toggle::after {
+            transform: translateY(0) rotate(-45deg);
+         }
+         .header__user {
+            width: calc(100% - 20px);
+            transition-delay: 0s;
+         }
+      }
+   }
+   // .header__user
+   &__user {
+      position: relative;
+      width: 60px;
+      height: 60px;
+      background: #fff;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      transition: 0.5s;
+      transition-delay: 0.5s;
+   }
+   // .header__img
+   &__img {
+      position: relative;
+      min-width: 60px;
+      height: 60px;
+      background: #333;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 10px solid #fff;
+   }
+   // .haeder__images
+   &__images {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      //max-width: 100%;
+   }
+   // .header__name
+   &__name {
+      white-space: nowrap;
+      color: #555;
+      font-size: 1.1em;
+      text-transform: capitalize;
+   }
+
+   // .header__menu-toggle
+   &__menu-toggle {
+      position: relative;
+      min-width: 60px;
+      height: 60px;
+      //background: red;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &::before {
+         content: "";
+         position: absolute;
+         width: 32px;
+         height: 2px;
+         background: #555;
+         transform: translateY(-10px);
+         box-shadow: 0 10px #555;
+         transition: 0.5s;
+      }
+      &::after {
+         content: "";
+         position: absolute;
+         width: 32px;
+         height: 2px;
+         background: #555;
+         transform: translateY(10px);
+         transition: 0.5s;
+      }
+   }
+}
+
+.menu {
+   position: absolute;
+   width: 100%;
+   height: calc(100% - 80px);
+   margin-top: 60px;
+   padding: 20px;
+   border-top: 1px solid rgba(0, 0, 0, 0.1);
+   overflow: hidden;
+   // .menu__body
+   &__body {
+   }
+   // .menu__item
+   &__item {
+   }
+   // .menu__link
+   &__link {
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+      gap: 10px;
+      color: #555;
+      i {
+         font-size: 1.5em;
+      }
+      &:hover{
+         color: #4e65ff;
+      }
+   }
+}
